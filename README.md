@@ -140,3 +140,5 @@ import toast, { Toaster, ToastBar } from 'react-hot-toast'
 実際に使用し、デプロイも行ったのですが特に挙動でバグがある点など見当たらず、
 githubを見ると最近までコミットが上がっているので、随時更新されているので、特に今のところ感じない。
 
+デプロイ
+https://study-react-hot-toast.vercel.app/
