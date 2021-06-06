@@ -1,6 +1,20 @@
 ## 学習の動機
+参考ページ：https://react-hot-toast.com/docs</br>
+Github：https://github.com/timolins/react-hot-toast</br>
+通知表示をUIを意識して実装したかったから。</br>
+SPAを作成にあたり、非同期処理を勉強している際に出会った。</br>
+UIライブラリを入れるにはサイズが大きくなるのでやめておきたい。</br>
+toastに特化したライブラリ（パッケージ）で実装したいと感じた。
 
 ## React hot toastの機能
+１.非同期処理などで時間差で表示させたい時</br>
+２.複数行の通知</br>
+３.絵文字を挿入することが可能</br>
+４.Dark Modeにも対応している</br>
+５.reactで独自に作ることができる</br>
+６.どの場所でも通知を出すことができる</br>
+７.TailwindCSSと組み合わせることができる</br>
+８.通知の順番を変えることができる
 
 ### ・API
 
@@ -62,7 +76,7 @@ const notify = () =>
     )
  }
 ```
-### ＜Toaster /＞ API
+### ・＜Toaster /＞ API
 
 全体設定はこのコンポーネントで行って個別の設定は別に設定することができる<br/>
 ex)app.jsでdurationを５０００と設定したが、index.jsの部分で１００００と設定すれば、表示から消えるまでの時間は5秒ではなく10秒になる。
@@ -97,7 +111,7 @@ ex)app.jsでdurationを５０００と設定したが、index.jsの部分で１�
       />
 ```
       
-### ＜ToasterBar /＞ API
+### ・＜ToasterBar /＞ API
 デフォルトのtoast自体の形を変える時に使う
 #### Add a dismiss button
 toastを消すボタンを実装
@@ -121,3 +135,8 @@ import toast, { Toaster, ToastBar } from 'react-hot-toast'
             )}
           </ToastBar>
 ```
+
+## 改善点
+実際に使用し、デプロイも行ったのですが特に挙動でバグがある点など見当たらず、
+githubを見ると最近までコミットが上がっているので、随時更新されているので、特に今のところ感じない。
+
