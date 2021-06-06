@@ -1,37 +1,27 @@
 import '../styles/globals.css'
-import toast, { Toaster } from 'react-hot-toast'
+import { useToaster } from 'react-hot-toast'
+
+const Notifications = () => {
+  const { toasts, handlers } = useToaster()
+  const { startPause, endPause } = handlers
+  return (
+    <div onMouseEnter={startPause} onMouseLeave={endPause}>
+      {toasts
+        .filter((toast) => toast.visible)
+        .map((toast) => (
+          <div key={toast.id} {...toast.ariaProps}>
+            {toast.message}
+          </div>
+        ))}
+    </div>
+  )
+}
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Component {...pageProps} />
-      <Toaster
-        // toasterの表示位置
-        position="top-center"
-        reverseOrder={false}
-        //余白について
-        gutter={8}
-        containerClassName=""
-        //toastがどこから出てくるかを指定できる
-        containerStyle={{}}
-        toastOptions={{
-          // Define default options
-          className: '',
-          duration: 5000,
-          style: {
-            background: '#363636',
-            color: '#fff',
-          },
-          // Default options for specific types
-          success: {
-            duration: 3000,
-            theme: {
-              primary: 'green',
-              secondary: 'black',
-            },
-          },
-        }}
-      />
+      <Notifications />
     </div>
   )
 }
