@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import toast from 'react-hot-toast'
 export default function Home() {
+  const handleClick = () => {
+    toast.success('Got the data')
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -22,10 +25,10 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <button onClick={handleClick} className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          </button>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
